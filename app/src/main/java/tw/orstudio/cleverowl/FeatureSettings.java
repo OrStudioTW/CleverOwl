@@ -1,11 +1,11 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 import java.util.Map;
 
 /** Configuration contains no account identifiers or credentials. */
 public final class FeatureSettings {
     public enum Membership { ORIGINAL, SUPER, MAX }
-    public static final String PACKAGE = "dev.local.duolingoxposed";
+    public static final String PACKAGE = "tw.orstudio.cleverowl";
     public static final String TARGET = "com.duolingo";
     public static final String PREFS = "features";
     public static final int SCHEMA = 1;

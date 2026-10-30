@@ -22,7 +22,9 @@ class VerifySample {
             byte[] buffer = new byte[65536];
             for (int n; (n = input.read(buffer)) != -1;) hash.update(buffer, 0, n);
         }
-        check(HexFormat.of().formatHex(hash.digest()).equals("30d915c7e55423f071157e6ce9064bae8cd7e65ed09bb99383bae505709f456c"), "Exact inspected APK SHA256");
+        check(Set.of("30d915c7e55423f071157e6ce9064bae8cd7e65ed09bb99383bae505709f456c",
+                "c4350eb27637e821f1dbaebd9988f23f270b4bbe5118b59cc01048fb9ac71c89")
+                .contains(HexFormat.of().formatHex(hash.digest())), "Exact inspected APK SHA256 (one of two verified containers)");
         var dex = DexFileFactory.loadDexContainer(new File(args[0]), Opcodes.getDefault());
         for (var entry : dex.getDexEntryNames()) for (var cls : dex.getEntry(entry).getDexFile().getClasses()) classes.put(cls.getType(), cls);
         var matches = new ArrayList<Method>();
@@ -37,7 +39,7 @@ class VerifySample {
         method(xp, "<init>", List.of("Ljava/lang/Double;", "Z"), "V");
         check(refs(method(classes.get("Ldqb0;"), "a", List.of("Lcom/duolingo/data/user/User;"), "D")).contains("Leqb0;->b:Ljava/lang/Double;"), "XP calculation consumes inspected multiplier");
         // Every deoptimized method must be an exact direct caller in this APK.
-        Path profile = Path.of(args.length > 1 ? args[1] : "app/src/main/java/dev/local/duolingoxposed/XpCallers2488.java");
+        Path profile = Path.of(args.length > 1 ? args[1] : "app/src/main/java/tw/orstudio/cleverowl/XpCallers2488.java");
         Set<String> declaredCallers = new TreeSet<>();
         for (String line : Files.readAllLines(profile)) {
             String trimmed = line.trim();

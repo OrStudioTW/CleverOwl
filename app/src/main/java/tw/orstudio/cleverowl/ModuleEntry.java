@@ -1,4 +1,4 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 import android.app.Application;
 import android.content.Context;
@@ -9,7 +9,6 @@ import de.robv.android.xposed.*;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import org.luckypray.dexkit.DexKitBridge;
 
-import java.io.FileInputStream;
 import java.lang.reflect.*;
 import java.security.MessageDigest;
 import java.util.*;
@@ -17,7 +16,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public final class ModuleEntry implements IXposedHookLoadPackage, IXposedHookZygoteInit {
     private static final String SIGNER = "1233ff6de4c70ef4d7deae54af15b167fc7cfd2539517bd2175870f3cb771731";
-    private static final String SAMPLE_SHA = "30d915c7e55423f071157e6ce9064bae8cd7e65ed09bb99383bae505709f456c";
     private final AtomicBoolean installed = new AtomicBoolean();
     private XSharedPreferences preferences;
     private volatile FeatureSettings settings = FeatureSettings.OFF;
@@ -49,13 +47,18 @@ public final class ModuleEntry implements IXposedHookLoadPackage, IXposedHookZyg
         }
         preferences = new XSharedPreferences(FeatureSettings.PACKAGE, FeatureSettings.PREFS);
         current();
-        log("CleverOwl 0.4.3-alpha; Target " + info.versionName + " (" + info.getLongVersionCode() + "); hook registration is not functional verification.");
-        boolean inspected = info.getLongVersionCode() == 2488 && "6.103.6".equals(info.versionName)
-                && SAMPLE_SHA.equals(sha256(context.getApplicationInfo().sourceDir));
-        if (inspected) attempt("CleverOwl native settings", () -> NativeSettingsUi.install(loader, ModuleEntry::log));
-        else log("Native settings integration skipped: this APK profile has not been inspected.");
+        log("CleverOwl 0.4.4-alpha; Target " + info.versionName + " (" + info.getLongVersionCode() + "); hook registration is not functional verification.");
+        boolean inspected = ApkProfile2488.matches(context.getApplicationInfo().sourceDir,
+                info.getLongVersionCode(), info.versionName);
+        boolean settingsAvailable = false;
+        if (inspected) {
+            log("Inspected 2488 code/resource profile matched (10 DEX, manifest and resource table).");
+            settingsAvailable = attempt("CleverOwl native settings", () -> NativeSettingsUi.install(loader, ModuleEntry::log));
+        } else log("Native settings integration skipped: version, DEX, manifest or resource table does not match the inspected profile.");
         if (!settings.enabled) {
-            log("Feature modifications disabled. CleverOwl settings remain available; restart after saving.");
+            log(settingsAvailable
+                    ? "Feature modifications disabled. CleverOwl settings hooks registered; check the settings row and restart after saving."
+                    : "Feature modifications disabled. CleverOwl settings entry unavailable; export logs for compatibility diagnosis.");
             return;
         }
         log("Settings: membership=" + settings.membership + ", timer=" + settings.unlimitedTimer + ", XP=" + settings.xpFactor
@@ -78,7 +81,7 @@ public final class ModuleEntry implements IXposedHookLoadPackage, IXposedHookZyg
         }
     }
 
-    /** A null bridge is permitted only after exact version + SHA verification. */
+    /** A null bridge is permitted only after exact version + code/resource hash verification. */
     private void installFeatures(DexKitBridge bridge, ClassLoader loader, boolean inspected) {
             if (settings.membership != FeatureSettings.Membership.ORIGINAL)
                 attempt("membership constructor inputs", () -> installMembership(HookResolver.user(bridge, loader), loader));
@@ -262,21 +265,13 @@ public final class ModuleEntry implements IXposedHookLoadPackage, IXposedHookZyg
     }
 
     private interface Install { void run() throws Exception; }
-    private static void attempt(String feature, Install action) {
-        try { action.run(); log(feature + ": hooks registered; runtime effect unverified."); }
-        catch (Exception | LinkageError e) { log(feature + ": unavailable (" + e + ")."); }
+    private static boolean attempt(String feature, Install action) {
+        try { action.run(); log(feature + ": hooks registered; runtime effect unverified."); return true; }
+        catch (Exception | LinkageError e) { log(feature + ": unavailable (" + e + ")."); return false; }
     }
     private static void log(String message) {
         XposedBridge.log("[DuolingoXposed] " + message);
         android.util.Log.i("DuolingoXposed", message);
-    }
-    private static String sha256(String path) throws Exception {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        try (FileInputStream input = new FileInputStream(path)) {
-            byte[] buffer = new byte[65536];
-            for (int count; (count = input.read(buffer)) != -1;) digest.update(buffer, 0, count);
-        }
-        return hex(digest.digest());
     }
     private static String hex(byte[] bytes) {
         StringBuilder out = new StringBuilder(bytes.length * 2);

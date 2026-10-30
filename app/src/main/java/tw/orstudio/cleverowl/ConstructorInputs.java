@@ -1,4 +1,4 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 /** Parameter positions verified against the inspected APK, never guessed from field names. */
 public final class ConstructorInputs {

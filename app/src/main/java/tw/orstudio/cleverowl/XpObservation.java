@@ -1,4 +1,4 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 /** Diagnostic output deliberately excludes identifiers, URLs, headers and request bodies. */
 public final class XpObservation {

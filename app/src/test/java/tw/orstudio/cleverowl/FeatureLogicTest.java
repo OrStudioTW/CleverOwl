@@ -1,4 +1,4 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 import org.junit.Test;
 import java.util.*;

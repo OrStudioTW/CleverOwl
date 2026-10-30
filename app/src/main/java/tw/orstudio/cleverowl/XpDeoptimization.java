@@ -1,4 +1,4 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 import de.robv.android.xposed.XposedBridge;
 import java.lang.reflect.Member;

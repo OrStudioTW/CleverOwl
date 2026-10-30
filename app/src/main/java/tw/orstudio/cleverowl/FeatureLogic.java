@@ -1,4 +1,4 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 public final class FeatureLogic {
     private FeatureLogic() {}

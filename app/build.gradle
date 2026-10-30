@@ -1,14 +1,14 @@
 plugins { id 'com.android.application' }
 
 android {
-    namespace 'dev.local.duolingoxposed'
+    namespace 'tw.orstudio.cleverowl'
     compileSdk 36
     defaultConfig {
-        applicationId 'dev.local.duolingoxposed'
+        applicationId 'tw.orstudio.cleverowl'
         minSdk 28
         targetSdk 36
-        versionCode 11
-        versionName '0.4.3-alpha'
+        versionCode 12
+        versionName '0.4.4-alpha'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17

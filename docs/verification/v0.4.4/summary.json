@@ -1,0 +1,42 @@
+{
+  "verified_at": "2026-10-30T23:14:32.170216+08:00",
+  "module": {
+    "version": "0.4.4-alpha",
+    "version_code": 12,
+    "package": "tw.orstudio.cleverowl",
+    "apk_sha256": "3458c3e2df53a13353908094413aefb4f577da40f61fc7ad703e09dc0ea4ac73"
+  },
+  "checks": {
+    "unit_tests": 45,
+    "lint_errors": 0,
+    "lint_warnings": 4,
+    "v2_signature": true,
+    "launcher": false,
+    "requested_permissions": [],
+    "native_abis_16kb_aligned": 4,
+    "third_party_source_companion": true
+  },
+  "scope": "This session built and tested the APK, reran both original-APK assertion sets, verified both actual content profiles, and checked the packaged APK. Device operations were read-only.",
+  "unverified": [
+    "device/runtime behavior",
+    "server entitlements",
+    "cross-version compatibility",
+    "GitHub submission"
+  ],
+  "sample_checks": {
+    "original_apk_assertions": 160,
+    "device_apk_assertions": 160,
+    "actual_profile_matches": 2,
+    "identical_zip_entries": 18229,
+    "different_zip_entries": 0
+  },
+  "diagnosis": {
+    "lsposed_module_starts": 5,
+    "profile_skips": 5,
+    "original_apk_sha256": "30d915c7e55423f071157e6ce9064bae8cd7e65ed09bb99383bae505709f456c",
+    "device_apk_sha256": "c4350eb27637e821f1dbaebd9988f23f270b4bbe5118b59cc01048fb9ac71c89",
+    "zip_sha256": "387b972914a1ea807b38a29dfe27e85c47f88a8e0e2cc0a0ae06690ec39dee06",
+    "official_signer_sha256": "1233ff6de4c70ef4d7deae54af15b167fc7cfd2539517bd2175870f3cb771731"
+  },
+  "device_writes_performed": false
+}

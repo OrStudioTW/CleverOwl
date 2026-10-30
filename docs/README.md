@@ -1,6 +1,7 @@
 # CleverOwl 文件
 
 - [專案使用與建置](../README.md)
+- [0.4.4 套件命名與設定入口修正](diagnostics/0.4.4-套件命名與設定入口修正.md)
 - [開發規格與相容性基準](design/開發規格與相容性基準.md)
 - [歷史發行資料](releases/README.md)
 - [分類規劃](repository-planning/REPOSITORY_ORGANIZATION_PLAN.md)
@@ -23,6 +24,8 @@
 - [0.4.3-僅保留Duolingo內嵌設定.md](history/0.4.3-僅保留Duolingo內嵌設定.md)
 
 ## 各版本驗證摘要
+
+本次修正：[0.4.4](verification/v0.4.4/summary.json)，45 項單元測試、兩份樣本各 160 項靜態斷言；新版實機驗收仍待完成。
 
 這些是原交付的歷史記錄，並非本次重新執行的結果；原始 143 份證據保存在本機歸檔。此處選錄各版摘要及 0.4.3 的去識別測試／建置／lint 記錄。
 

@@ -1,4 +1,4 @@
-package dev.local.duolingoxposed;
+package tw.orstudio.cleverowl;
 
 /** Direct XP calculation/factory/constructor callers in base SHA256 30d915c7... only.
  * Generated from original DEX method references; no application code is included. */

@@ -123,7 +123,8 @@ def main() -> None:
     aapt = str(build_tools / ('aapt2.exe' if os.name == 'nt' else 'aapt2'))
     badging = command([aapt, 'dump', 'badging', str(apk_input)], 'apk-badging.txt')
     manifest = command([aapt, 'dump', 'xmltree', str(apk_input), '--file', 'AndroidManifest.xml'], 'apk-manifest.txt')
-    for token in ("name='dev.local.duolingoxposed'", f"versionName='{version}'", f"versionCode='{code}'", "application-label:'CleverOwl'"):
+    resources = command([aapt, 'dump', 'resources', str(apk_input)], 'apk-resources.txt')
+    for token in ("name='tw.orstudio.cleverowl'", f"versionName='{version}'", f"versionCode='{code}'", "application-label:'CleverOwl'"):
         if token not in badging:
             raise ValueError('APK metadata does not match this source checkout')
     if 'uses-permission' in badging or 'launchable-activity:' in badging:
@@ -134,16 +135,20 @@ def main() -> None:
         raise ValueError('Unexpected external settings launcher')
     if 'android:theme(0x01010000)=@0x01030055' not in manifest:
         raise ValueError('Expected the NoDisplay bridge theme')
+    if 'xposed_scope' not in resources or 'com.duolingo' not in resources or 'tw.orstudio.cleverowl' not in resources:
+        raise ValueError('Expected target and module shared-preferences scopes')
     with zipfile.ZipFile(apk_input) as apk:
-        if apk.read('assets/xposed_init').decode().strip() != 'dev.local.duolingoxposed.ModuleEntry':
+        if apk.read('assets/xposed_init').decode().strip() != 'tw.orstudio.cleverowl.ModuleEntry':
             raise ValueError('Unexpected Xposed entry')
         classes = [name for entry in apk.namelist() if re.fullmatch(r'classes\d*\.dex', entry) for name in dex_classes(apk.read(entry))]
         if any(name.startswith('Lde/robv/android/xposed/') for name in classes):
             raise ValueError('Framework API classes must not be bundled')
-        if 'Ldev/local/duolingoxposed/MainActivity;' in classes:
+        if any(name.startswith('Ldev/local/duolingoxposed/') for name in classes):
+            raise ValueError('Old module package classes must not be bundled')
+        if 'Ltw/orstudio/cleverowl/MainActivity;' in classes:
             raise ValueError('Removed external settings class is present')
         for name in ('ModuleEntry', 'SettingsClient', 'SettingsExchangeActivity'):
-            if f'Ldev/local/duolingoxposed/{name};' not in classes:
+            if f'Ltw/orstudio/cleverowl/{name};' not in classes:
                 raise ValueError('Required module class missing')
         libraries = sorted(name for name in apk.namelist() if name.endswith('.so'))
         expected = sorted(f'lib/{abi}/libdexkit.so' for abi in ('arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'))
@@ -207,7 +212,7 @@ def main() -> None:
     (output / 'SHA256SUMS.txt').write_text(''.join(f'{sha(path)}  {path.relative_to(output).as_posix()}\n' for path in files), encoding='utf-8')
     summary = {
         'verified_at': datetime.now(timezone(timedelta(hours=8))).isoformat(),
-        'module': {'version': version, 'version_code': code, 'package': 'dev.local.duolingoxposed', 'apk_sha256': sha(apk_output)},
+        'module': {'version': version, 'version_code': code, 'package': 'tw.orstudio.cleverowl', 'apk_sha256': sha(apk_output)},
         'checks': {'unit_tests': tests, 'lint_errors': 0, 'lint_warnings': int(lint_result.group(2)),
                    'v2_signature': True, 'launcher': False, 'requested_permissions': [], 'native_abis_16kb_aligned': 4,
                    'source_files': len(paths), 'third_party_source_companion': companion.exists()},
