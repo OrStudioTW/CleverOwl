@@ -1,0 +1,54 @@
+{
+  "verified_at": "2026-10-29T21:25:58.580414+08:00",
+  "version": "0.4.3-alpha",
+  "version_code": 11,
+  "package": "dev.local.duolingoxposed",
+  "original_inventory_files_accounted_for": 84821,
+  "preserved_original_output_hashes_matched": 535,
+  "baseline_source_files": 43,
+  "unchanged_baseline_source_files": 40,
+  "intentional_source_edits": [
+    ".gitignore",
+    "README.md",
+    "app/src/main/assets/THIRD_PARTY_NOTICES.txt"
+  ],
+  "root_build": {
+    "status": "pass",
+    "gradle_tasks_executed": 51,
+    "unit_tests": 39,
+    "lint_errors": 0,
+    "lint_warnings": 4
+  },
+  "clean_source_build": {
+    "status": "pass",
+    "gradle_tasks_executed": 51,
+    "unit_tests": 39,
+    "lint_errors": 0,
+    "lint_warnings": 4,
+    "source_snapshot_files": 105,
+    "uses_project_local_properties": false,
+    "uses_shared_android_sdk": true,
+    "uses_existing_external_gradle_dependency_cache": true,
+    "empty_dependency_cache_or_online_download_verified": false
+  },
+  "sample_assertions_rerun": 160,
+  "apk_sha256": "1707f41b7151d69b73640836755c69cdf62bfab53c6d5dd32e63eed5d7f88e1c",
+  "root_and_clean_apks_identical": true,
+  "same_debug_signing_certificate": true,
+  "native_abis_16kb_aligned": 4,
+  "runtime_apk_entries_changed_except_signatures": [
+    "assets/THIRD_PARTY_NOTICES.txt"
+  ],
+  "requested_permissions": [],
+  "launcher": false,
+  "workspace_git_initialized": false,
+  "github_submission_performed": false,
+  "unverified": [
+    "device/runtime acceptance",
+    "server entitlements",
+    "cross-version support",
+    "empty-cache online build",
+    "project license choice",
+    "GitHub submission"
+  ]
+}

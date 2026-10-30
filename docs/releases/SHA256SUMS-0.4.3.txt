@@ -1,0 +1,3 @@
+a3ed7b50580b666e652fe6429b27417488648e9acb5568f2ac97d7439584056f  CleverOwl-0.4.3-alpha-debug.apk
+d0957c3d22ab9d65ceb6b392181ea005389a6cbca43eda0bb0ca41fb6a424808  CleverOwl-0.4.3-alpha-source.zip
+e115928260680dec89df38511298f0040dcc09f12bf38232abde63ee49ab341c  third-party-sources/DexKit-2.3.0-source.zip

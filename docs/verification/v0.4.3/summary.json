@@ -1,0 +1,40 @@
+{
+  "historical_record": true,
+  "original_verified_at": "2026-10-29T18:49:22.140219+08:00",
+  "module": {
+    "name": "CleverOwl",
+    "version": "0.4.3-alpha",
+    "package": "dev.local.duolingoxposed",
+    "apk_sha256": "a3ed7b50580b666e652fe6429b27417488648e9acb5568f2ac97d7439584056f",
+    "source_sha256": "d0957c3d22ab9d65ceb6b392181ea005389a6cbca43eda0bb0ca41fb6a424808",
+    "source_files": 43
+  },
+  "checks": {
+    "build": "pass",
+    "unit_tests": {
+      "total": 39,
+      "failures": 0,
+      "errors": 0
+    },
+    "static_apk_assertions": 160,
+    "lint_errors": 0,
+    "lint_warnings": 5,
+    "apk_signature": "v2/debug/pass",
+    "requested_permissions": [],
+    "xposed_api_classes_bundled": false,
+    "source_archive_exclusions": "pass",
+    "native_packaging": "4 ABIs stored and 16KB aligned; old compressed packaging reproduced"
+  },
+  "static_evidence": "160 original APK assertions reused from0.4.2; target APK, native contracts and VerifySample tool unchanged",
+  "unverified": [
+    "0.4.3 device injection",
+    "0.4.3 update retains settings and embedded navigation/save; user reported0.4.2 UI working",
+    "unauthorized Activity caller rejection on device",
+    "original privacy navigation",
+    "x2 persistence and other course modes",
+    "server entitlements",
+    "all timed modes",
+    "other app/framework versions"
+  ],
+  "provenance": "Selected fields from the original version summary. Original logs remain in the local migration archive."
+}

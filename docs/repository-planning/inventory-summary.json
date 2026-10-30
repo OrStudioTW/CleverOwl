@@ -1,0 +1,104 @@
+{
+  "capturedAt": "2026-10-29T19:10:33.9138344+08:00",
+  "scope": "existing workspace files, excluding this planning delivery",
+  "totalFiles": 84821,
+  "totalBytes": 1568653350,
+  "sourceFiles": 43,
+  "sourceBytes": 289850,
+  "rootGitRepositoryExists": false,
+  "categoryCount": 17,
+  "categories": [
+    {
+      "Category": "dependency-cache",
+      "Files": 4210,
+      "Bytes": 541242212
+    },
+    {
+      "Category": "external-tool",
+      "Files": 326,
+      "Bytes": 446244469
+    },
+    {
+      "Category": "generated-build",
+      "Files": 297,
+      "Bytes": 31791904
+    },
+    {
+      "Category": "local-research",
+      "Files": 63,
+      "Bytes": 5363663
+    },
+    {
+      "Category": "machine-config",
+      "Files": 1,
+      "Bytes": 54
+    },
+    {
+      "Category": "migration-private",
+      "Files": 3,
+      "Bytes": 20304588
+    },
+    {
+      "Category": "private-runtime-and-tracking",
+      "Files": 25,
+      "Bytes": 6666149
+    },
+    {
+      "Category": "project-source",
+      "Files": 43,
+      "Bytes": 289850
+    },
+    {
+      "Category": "release-artifact",
+      "Files": 22,
+      "Bytes": 51812404
+    },
+    {
+      "Category": "release-checksum",
+      "Files": 11,
+      "Bytes": 3504
+    },
+    {
+      "Category": "script-review",
+      "Files": 5,
+      "Bytes": 17381
+    },
+    {
+      "Category": "technical-document",
+      "Files": 14,
+      "Bytes": 57131
+    },
+    {
+      "Category": "third-party-apk",
+      "Files": 5,
+      "Bytes": 194285807
+    },
+    {
+      "Category": "third-party-decompiled",
+      "Files": 79651,
+      "Bytes": 269128893
+    },
+    {
+      "Category": "third-party-source-archive",
+      "Files": 1,
+      "Bytes": 1042780
+    },
+    {
+      "Category": "verification-evidence",
+      "Files": 143,
+      "Bytes": 401955
+    },
+    {
+      "Category": "workspace-guide",
+      "Files": 1,
+      "Bytes": 606
+    }
+  ],
+  "inventoryPath": "work/repository-planning/all-files.csv",
+  "limitations": [
+    "No file moves or deletions",
+    "No workspace Git initialization, commit or push",
+    "No new Android build or device test",
+    "Source code and documents still require publication review"
+  ]
+}

@@ -1,0 +1,39 @@
+# Repository sources are at the root; local data and deliveries remain untracked.
+/work/
+/outputs/
+/dist/
+/artifacts/
+.gradle/
+**/build/
+.idea/
+.vscode/
+local.properties
+key.properties
+keystore.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.apk
+*.aab
+*.apks
+*.dex
+*.class
+__pycache__/
+*.py[cod]
+*.hprof
+*.log
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
+
+# No blanket *.jar / *.zip rule: Gradle wrapper JAR must remain tracked.
+# Third-party source release companions are stored under ignored dist/.
+

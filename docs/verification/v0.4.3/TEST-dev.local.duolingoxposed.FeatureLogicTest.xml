@@ -1,0 +1,18 @@
+<testsuite name="dev.local.duolingoxposed.FeatureLogicTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-29T10:48:11.943Z" time="0.014">
+  <properties />
+  <testcase name="invalidMultiplierPreservesTheCallersAbilityToSkip" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.003" />
+  <testcase name="inspectedReducerNeverReachesItsExpiryThresholdWhenEnabled" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.001" />
+  <testcase name="malformedAndOutOfRangeSettingsDoNotEnableFeatures" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.002" />
+  <testcase name="independentSettingsArePreserved" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.0" />
+  <testcase name="multiplierUsesEffectiveOriginalBoost" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.001" />
+  <testcase name="extensionStillExpiresAtItsNewBoundary" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.0" />
+  <testcase name="originalModePreservesNativeBoost" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.001" />
+  <testcase name="pathPreviewUsesTheSameMultiplierOnce" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.001" />
+  <testcase name="oldHighFactorsClampWithoutChangingOtherSettings" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.001" />
+  <testcase name="extensionDoesNotCreateAnUninitializedBoost" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.0" />
+  <testcase name="unmodifiedReducerStillExpiresWhenTheHookIsDisabled" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.0" />
+  <testcase name="missingOrFutureSchemaDisablesEverything" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.0" />
+  <testcase name="extensionKeepsAStableExpiryAcrossRepeatedReads" classname="dev.local.duolingoxposed.FeatureLogicTest" time="0.0" />
+  <system-out />
+  <system-err />
+</testsuite>

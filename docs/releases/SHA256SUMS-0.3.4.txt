@@ -1,0 +1,3 @@
+c7aedb3a91e84a77f2565d535d2852ff5d3c5c1827350194b884c21526de1ea2  duolingo-xposed-0.3.4-alpha-debug.apk
+4054f17a6c741b5774ae227100c9409f62c62dd1e6859043a2e6480462305571  duolingo-xposed-0.3.4-alpha-source.zip
+e115928260680dec89df38511298f0040dcc09f12bf38232abde63ee49ab341c  third-party-sources/DexKit-2.3.0-source.zip

@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-29T19:10:33.9138344+08:00",
+  "environment": "Windows / PowerShell / local filesystem",
+  "classifiedFiles": 84821,
+  "uniquePaths": 84821,
+  "unclassifiedFiles": 0,
+  "categorySum": 84821.0,
+  "sourceArchive": "outputs/CleverOwl-0.4.3-alpha-source.zip",
+  "archiveSourceFilesMatched": 43,
+  "archiveContentHashMatches": 43,
+  "sourceArchiveSha256": "d0957c3d22ab9d65ceb6b392181ea005389a6cbca43eda0bb0ca41fb6a424808",
+  "sourcePatternScanFiles": 42,
+  "sourcePatternFindings": [],
+  "scanLimit": "Four pattern checks on source text only; not an exhaustive secrets or document publication review",
+  "androidBuildRunThisTurn": false,
+  "fileMigrationRunThisTurn": false,
+  "ignorePolicy": {
+    "checkedAt": "2026-10-29T19:16:33.8355910+08:00",
+    "fixture": "isolated temporary Git repository; workspace Git not initialized",
+    "cases": 84833,
+    "failures": 0,
+    "sourceCandidatesKept": 43,
+    "caveat": "Ignore classification only; review-and-sanitize files are still withheld from initial commit"
+  }
+}

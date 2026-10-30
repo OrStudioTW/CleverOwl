@@ -1,0 +1,11 @@
+<testsuite name="dev.local.duolingoxposed.SettingsContractTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-29T10:48:12.012Z" time="0.004">
+  <properties />
+  <testcase name="acceptsEverySettingWithoutDroppingValues" classname="dev.local.duolingoxposed.SettingsContractTest" time="0.001" />
+  <testcase name="acceptsOnlyTheInspectedTargetIdentity" classname="dev.local.duolingoxposed.SettingsContractTest" time="0.0" />
+  <testcase name="rejectsSpoofedOrAmbiguousTargetIdentity" classname="dev.local.duolingoxposed.SettingsContractTest" time="0.0" />
+  <testcase name="rejectsWrongTypesAndNulls" classname="dev.local.duolingoxposed.SettingsContractTest" time="0.001" />
+  <testcase name="rejectsUnsupportedOptions" classname="dev.local.duolingoxposed.SettingsContractTest" time="0.001" />
+  <testcase name="rejectsUnknownMissingAndFutureSchemaFields" classname="dev.local.duolingoxposed.SettingsContractTest" time="0.001" />
+  <system-out />
+  <system-err />
+</testsuite>

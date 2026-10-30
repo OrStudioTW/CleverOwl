@@ -1,0 +1,39 @@
+{
+  "historical_record": true,
+  "original_verified_at": "2026-10-29T17:09:55.736290+08:00",
+  "module": {
+    "version": "0.3.4-alpha",
+    "package": "dev.local.duolingoxposed",
+    "apk_sha256": "c7aedb3a91e84a77f2565d535d2852ff5d3c5c1827350194b884c21526de1ea2",
+    "source_sha256": "4054f17a6c741b5774ae227100c9409f62c62dd1e6859043a2e6480462305571",
+    "source_files": 39
+  },
+  "checks": {
+    "build": "pass",
+    "unit_tests": {
+      "total": 33,
+      "failures": 0,
+      "errors": 0
+    },
+    "static_apk_assertions": 122,
+    "lint_errors": 0,
+    "lint_warnings": 6,
+    "apk_signature": "v2/debug/pass",
+    "requested_permissions": [],
+    "xposed_api_classes_bundled": false,
+    "source_archive_exclusions": "pass",
+    "native_packaging": "4 ABIs stored and 16KB aligned; old compressed packaging reproduced"
+  },
+  "static_evidence": "Historical sample-specific assertion result; not rerun by the directory migration.",
+  "unverified": [
+    "LSPosed injection of revision 0.3.4",
+    "0.3.4 cap and legacy migration on device",
+    "x2 persistence and other course modes",
+    "server entitlements",
+    "all timed modes",
+    "latest stable track",
+    "other versions",
+    "native runtime loading on unknown APKs"
+  ],
+  "provenance": "Selected fields from the original version summary. Original logs remain in the local migration archive."
+}

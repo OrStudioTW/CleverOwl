@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CleverOwl</string>
+    <string name="module_description">CleverOwl · Duolingo 設定與練習功能擴充。</string>
+    <string-array name="xposed_scope">
+        <item>com.duolingo</item>
+        <!-- Needed for LSPosed shared preferences in the headless settings exchange. -->
+        <item>dev.local.duolingoxposed</item>
+    </string-array>
+</resources>

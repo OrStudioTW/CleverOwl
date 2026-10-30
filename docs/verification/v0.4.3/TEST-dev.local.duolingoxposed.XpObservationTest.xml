@@ -1,0 +1,10 @@
+<testsuite name="dev.local.duolingoxposed.XpObservationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-29T10:48:12.017Z" time="0.002">
+  <properties />
+  <testcase name="excludesReadsOtherRoutesAndLookalikeHosts" classname="dev.local.duolingoxposed.XpObservationTest" time="0.0" />
+  <testcase name="decodedSummaryDoesNotClaimNetworkOrigin" classname="dev.local.duolingoxposed.XpObservationTest" time="0.0" />
+  <testcase name="selectsSessionWritesOnDuolingoHosts" classname="dev.local.duolingoxposed.XpObservationTest" time="0.0" />
+  <testcase name="emitsScalarFieldsWithoutPretendingEncodingProvesSubmission" classname="dev.local.duolingoxposed.XpObservationTest" time="0.001" />
+  <testcase name="unexpectedObjectsAndNonfiniteValuesCannotLeakDetails" classname="dev.local.duolingoxposed.XpObservationTest" time="0.0" />
+  <system-out />
+  <system-err />
+</testsuite>

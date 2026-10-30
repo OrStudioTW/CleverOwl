@@ -1,0 +1,32 @@
+This experimental module is not affiliated with Duolingo or LSPosed.
+No Duolingo APK, decompiled source, artwork, account data or signing key is distributed.
+
+DexKit 2.3.0, Copyright LuckyPray and contributors
+https://github.com/LuckyPray/DexKit/tree/2.3.0
+Java/Kotlin interface: Apache-2.0. Core native library: LGPL-3.0.
+Used without modifications. For a packaged delivery, the upstream source companion
+is placed at third-party-sources/DexKit-2.3.0-source.zip relative to the delivery
+root (local workspace: dist/third-party-sources/). Source is also available at
+https://codeload.github.com/LuckyPray/DexKit/zip/refs/tags/2.3.0
+The native library is packaged as a separate shared library. Rebuild this module
+with a modified DexKit AAR using the included Gradle project; no obfuscation,
+signature check or integrity gate restricts modification of this module itself.
+DexKit third-party code (slicer, ThreadPool, parallel-hashmap and FlatBuffers)
+retains its individual license notices in the corresponding upstream source.
+
+Kotlin standard library 1.5.0: Copyright JetBrains and contributors, Apache-2.0.
+https://github.com/JetBrains/kotlin/tree/v1.5.0
+FlatBuffers Java 23.5.26: Copyright Google and contributors, Apache-2.0.
+https://github.com/google/flatbuffers/tree/v23.5.26
+libcxx Prefab 1.2.0: RikkaW, topjohnwu and LLVM contributors.
+https://github.com/RikkaW/libcxx-prefab
+https://github.com/topjohnwu/libcxx
+See licenses/libcxx-LICENSE.txt (Apache-2.0 with LLVM exceptions and legacy notices).
+JetBrains annotations: Apache-2.0; see licenses/annotations-LICENSE.txt.
+
+Build-time only: Xposed API 82 (Apache-2.0, not included in APK);
+JUnit 4.13.2 (EPL-1.0, tests only); Android Gradle Plugin 8.13.2 and
+Gradle wrapper 8.13 (Apache-2.0); JADX/dexlib2 is used externally for analysis
+and is not included in the module or source archive.
+
+Full Apache-2.0, LGPL-3.0, GPL-3.0 and libcxx license texts are in assets/licenses.
